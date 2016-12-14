@@ -18,10 +18,10 @@ class Card(object):
         """
         target_card.hp -= self.my_card.attack_dmg
         self.my_card.hp -= target_card.attack_dmg
- 
-        print("{} ataco a {}".format(target.name, self.name))
 
-    
+        return"{} ataco a {}".format(target.name, self.name)
+
+
 
 
 class Player(object):
@@ -60,7 +60,7 @@ class Player(object):
                     print("La carta no existe...Seleccione una valida")
             except ValueError:
                 print("Ingrese un valor valido")
-           
+
         return self.card_list[card_index]
 
     def select_card(self):
@@ -73,13 +73,12 @@ class Player(object):
                 try:
                     card_desc = self.card_list[card_index]
                     print("{} ha seleccionado: \n {}".format(self.name, card_desc))
-
                     break
                 except IndexError:
                     print("La carta no existe...Seleccione una valida")
             except ValueError:
                 print("Ingrese un valor valido")
-           
+
         return self.card_list[card_index]
 
     def cards(self):
@@ -91,7 +90,7 @@ class Player(object):
 
     def card_names(self):
         """
-        Imprime solo los nombres de las cartas 
+        Imprime solo los nombres de las cartas
         """
         for i in self.card_list:
             print(str(i.name))
@@ -176,7 +175,7 @@ while play:
         player2.place_a_card()
 
 
-    
+
 
 
     #print("Cartas de {}".format(player1))
@@ -194,7 +193,7 @@ while play:
             #print(player1.cards())
 
             use = player1.select_card()
- 
+
 
             objetivo = int(input("22Selecciona un objetivo a atacar: \n"))
             try:
@@ -215,6 +214,3 @@ while play:
 
 
     play = False
-
-
-
