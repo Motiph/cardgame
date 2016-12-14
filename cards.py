@@ -28,11 +28,14 @@ class Player(object):
     """
     Clase para los jugadores
     """
-    def __init__(self, name):
+    def __init__(self, name, hp=None):
         self.name = name
+        self.hp = hp
         self.card_list = []
         self.cards_on_table = []
         self.deleted_cards = []
+        self.available_cards = []
+        self.cards_in_deck = []
 
     def __str__(self):
         return self.name
@@ -85,8 +88,9 @@ class Player(object):
         """
         Imprime las cartas del jugador
         """
-        for i in self.card_list:
-            print(str(i))
+        #for i in self.card_list:
+        #    print(str(i))
+        return " \n".join([str(carta) for carta in self.card_list])
 
     def card_names(self):
         """
@@ -168,9 +172,11 @@ while play:
     print("{} juega primero".format(inicia_jugada))
 
     if inicia_jugada == juego.players[0]:
+        print(player1.cards())
         print("Player 1 - Selecciona carta")
         player1.place_a_card()
     else:
+        print(player2.cards())
         print("Player 2 - Selecciona carta")
         player2.place_a_card()
 
