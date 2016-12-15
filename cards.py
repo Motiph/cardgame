@@ -88,16 +88,13 @@ class Player(object):
         """
         Imprime las cartas del jugador
         """
-        #for i in self.card_list:
-        #    print(str(i))
         return " \n".join([str(carta) for carta in self.card_list])
 
     def card_names(self):
         """
         Imprime solo los nombres de las cartas
         """
-        for i in self.card_list:
-            print(str(i.name))
+        return " \n".join([str(carta.name) for carta in self.card_list])
 
 
 
@@ -157,6 +154,8 @@ cartas = {
 #se gregan 2 cartas al jugador 1
 player1.add_card(cartas[1])
 player1.add_card(cartas[2])
+
+print(player1.card_names.__doc__)
 
 #se agregan 2 cartas al jugador 2
 player2.add_card(cartas[3])
